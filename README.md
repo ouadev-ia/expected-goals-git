@@ -1,3 +1,4 @@
+<pre>
 # expected-goals-git
 expected-goals-git/
 ├─ README.txt
@@ -5,4 +6,4 @@ expected-goals-git/
 ├─ figures/
 ├─ manuscript/StatFootDB_NonPenalty_xG_IJoSI_v8.docx
 └─ supplementary/
-
+</pre>
