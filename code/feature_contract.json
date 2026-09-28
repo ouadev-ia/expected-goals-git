@@ -1,0 +1,26 @@
+{
+  "version": "0.3",
+  "minimum_coverage_fraction_default": 0.8,
+  "coverage_exempt_fields": ["time_added", "x2", "y2"],
+  "retention_policy": "Preserve these three fields in both derived cohort exports regardless of coverage. Never discard a shot solely because these fields are missing.",
+  "time_added": {
+    "role": "included_pre_shot_predictor_with_explicit_missingness",
+    "missingness_indicator": "time_added_missing",
+    "replace_missing_with_zero": false,
+    "development_observation": "All 9880 populated values occur at minute 45 or 90. Blank semantics remain partly unresolved; no claim that blank equals zero.",
+    "model_encoding": "Training-partition median imputation plus the explicit missingness indicator; original exports unchanged.",
+    "protocol": "EXPERIMENT_LOCK.md"
+  },
+  "x2": {
+    "role": "audit_and_possible_post_shot_analysis",
+    "allowed_in_pre_shot_xg": false,
+    "reason": "Endpoint is recorded after the shot; this restriction is independent of coverage."
+  },
+  "y2": {
+    "role": "audit_and_possible_post_shot_analysis",
+    "allowed_in_pre_shot_xg": false,
+    "reason": "Endpoint is recorded after the shot; this restriction is independent of coverage."
+  },
+  "pre_shot_core_candidates": ["distance_m", "angle_rad", "body_part", "situation", "minute", "home"],
+  "target": "goal"
+}
